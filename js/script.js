@@ -2,6 +2,28 @@
 
 window.addEventListener('DOMContentLoaded', () => {
 
+    const btnTrigger = document.querySelectorAll('[data-modal]')
+    const timerPricing = document.querySelector('.hide');
+    const hidenMenu = document.querySelector('.hiden-menu');
+    const menu = document.querySelector('.menu__info');
+
+    hidenMenu.addEventListener('click', () => {
+        menu.classList.toggle('menu__info');
+    })
+
+    function openModal() {
+        timerPricing.classList.remove('hide');
+        clearInterval(modalTimerId);
+    }
+
+    const modalTimerId = setTimeout(openModal, 5000);
+
+    btnTrigger.forEach(e => {
+        e.addEventListener('click', () => {
+            timerPricing.classList.add('hide');
+        })
+    });
+
     const deadLine = '2023-11-07';
 
     function getTimeRemaining(endtime) {
@@ -52,4 +74,6 @@ window.addEventListener('DOMContentLoaded', () => {
     }
 
     setClock('.pricing__timer', deadLine);
+
+
 })

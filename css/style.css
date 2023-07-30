@@ -59,7 +59,6 @@
     background-repeat: no-repeat;
     background-position: center;
     background-size: cover;
-    position: relative;
 }
 
 .menu {
@@ -360,6 +359,7 @@
 .pricing__container {
     padding-top: 112px;
     padding-bottom: 125px;
+    /* position: relative; */
 }
 
 .pricing__title {
@@ -470,28 +470,36 @@
     background: rgba(0, 0, 0, 0.11);
 }
 
+.hide {
+    display: none;
+}
+
 .pricing__timer {
     display: flex;
     justify-content: space-around;
-    flex-wrap: wrap;
+    width: 75%;
+    margin-inline-start: auto;
+    position: relative;
+    bottom: 60px;
 }
 
 .time-block {
-    border-radius:  10px 100px / 120px;;
+    border-radius: 10px 100px / 120px;
+    border: thick double #ded410;
     color: aqua;
     background-color: black;
     padding: 20px 25px;
-    font-size: 35px;
+    font-size: 30px;
     font-family: 'Lato';
     width: 20%;
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 0 10px 0;
+    margin: 0 5px 0;
 }
 
-.time-block> span {
-    padding-bottom: 15px;
+.time-block>span {
+    padding-bottom: 10px;
 }
 
 @media (max-width: 994px) {
@@ -672,22 +680,76 @@
         margin-bottom: 71px;
     }
 
+    .pricing__timer {
+        width: auto;
+    }
+
     .time-block {
-       font-size: 30px;
-        width: 35%;
+        font-size: 27px;
+        width: 30%;
         margin-bottom: 10px;
     }
-    
-    .time-block> span {
+
+    .time-block>span {
         padding-bottom: 10px;
+    }
+
+    .hiden-menu {
+        display: none;
     }
 
 }
 
 @media (max-width: 481px) {
 
+    .menu {
+        position: relative;
+    }
+
+    .hiden-menu {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-end;
+    }
+
+    .hiden {
+        border: #FFFFFF solid 3px;
+        margin-bottom: 5px;
+    }
+
+    .hiden_one {
+        width: 15px;
+    }
+
+    .hiden_two {
+        width: 26px;
+    }
+
+
+    .hiden_tree {
+        width: 26px;
+    }
+
     .menu__info {
         display: none;
+        
+    }
+    
+    .menu__links {
+        display: flex;
+        flex-direction: column;
+        position: absolute;
+        background: rgb(39, 40, 40);
+        top: 95px;
+        left: 32px;
+    }
+
+    .menu__links> :nth-child(n) {
+        font-size: 26px;
+        font-weight: 400;
+        color: #FFFFFF;
+        padding: 28px 40px;
+        border-bottom: #848E97 solid 1px;
     }
 
     .menu__name {
@@ -810,8 +872,9 @@
     }
 
     .time-block {
-        width: 45%;
         margin-bottom: 10px;
+        font-size: 20px;
+        width: 20%;
     }
 
 }
